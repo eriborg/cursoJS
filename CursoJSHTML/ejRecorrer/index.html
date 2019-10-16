@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //let arr = ["Juan", 123, 3.14, [1,2,3], {nombre: "Jose"}, function () {console.log("hola")}];    
+        //console.log(arr);
+        let numeros = [2,1,3,6,100,8,9,10,5];
+        let nombres = ["Tomas", "Timoteo", "Juan", "Pedro", "ana"];
+
+        for (let i = 0; i < numeros.length ; i++) {
+          console.log(i, numeros[i]);        
+        }
+
+        console.log("El elemento en el indice 4: "+ numeros[4]);
+
+        numeros.sort(comparar);//sirve para la comparaciòn de numeros
+
+        function comparar(a,b) {
+            return a - b;
+        }
+
+        nombres.sort();
+
+        for (let i = 0; i < nombres.length ; i++) {
+          console.log(i, nombres[i]);        
+        }
+
+
+    </script>
+
+</body>
+</html>
