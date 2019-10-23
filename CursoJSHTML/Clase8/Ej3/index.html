@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/personas.js"></script>
+    <title>Clase 8 -Ejercicio 2 foreach</title>
+</head>
+<body>
+
+    <button id="btn">1</button>
+    <button id="btn2">2</button>
+
+    <script>
+        let numeros = [2,5,7,8,10];
+        let nombres = ["Juan", "Zoilo", "andrea","Miguel", "Andrea"];
+
+        //uso reduce opcion 1
+        var x = numeros.reduce(function(a,b,c,d){
+            console.log("anterior: " + a);
+            console.log("actual: " + b);
+            return a+b; //comienza en el inicio 0 + a:2 =2, luego la suma de a+b con el siguiente
+        },0); //inicia en 0
+
+        console.log(x);
+
+        //la forma tradicional de reduce seria la siguiente
+        let suma = 0;
+        for (let i = 0; i < numeros.length; i++) {
+            suma += numeros[i];            
+        }
+
+        console.log(suma);
+        //reduce reducido opciòn 2
+        var y = numeros.reduce((a,b) => a+b,0); //inicia en 0
+        console.log("y " + y);
+
+        let cantNombre = nombres.reduce((a,b)=> a+1, 0);
+        console.log("Cantidad de nombres: " + cantNombre);
+
+        //Promedio de las edades
+        let promEdadFem = personas.filter(p => p.gender === 'Female')
+                                   .map(p => p.edad)
+                                   .reduce((ant, act, indice, arr) => ant+act/arr.length,0);
+                                   //Reduce calcula promedio
+
+        console.log(promEdadFem.toFixed(2));
+
+    </script>
+</body>
+</html>

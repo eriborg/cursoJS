@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/personas.js"></script>
+    <title>Clase 8 -Ejercicio 2 foreach</title>
+</head>
+<body>
+
+    <button id="btn">1</button>
+    <button id="btn2">2</button>
+
+    <script>
+        let numeros = [23,45,67,32,12];
+        let nombres = ["Juan", "Zoilo", "andrea","Miguel", "Andrea"];
+
+        numeros.forEach(foo);
+
+        function foo(a,b,c) {
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+
+        //modifica el array original
+        /*numeros.forEach(function (a, b) {
+            numeros[b] = a * 2;
+        });*/
+
+        console.log(numeros);
+        //opcion 1
+        var dobles = [];
+        numeros.forEach(function(a) {
+            dobles.push(a*2);
+        });
+
+        console.log(dobles);
+
+        //opcion 2- Utilizando map
+        var cuadrados = numeros.map(function(a) {
+            return a * a;
+        });
+        var cuadrados = numeros.map(a => a*a);
+
+        console.log(cuadrados);
+        //devuelve en un array u objeto los datos que yo quiero del js de personas
+        let nombreGen = personas.map(function(a) {
+            return {nombre: a.first_name, genero: a.gender};
+        });
+
+        console.log(nombreGen);
+        //busca algun valor mayor a 50 es verdadero si encuentra
+        console.log(numeros.some(function(a) {
+           return a > 50; 
+        }));
+
+        console.log(nombres.some(function(a) {
+           return a == "Zoilo"; 
+        }));
+        //verifica que todos los valores cuamplan la condicion
+        console.log(numeros.every(function(a) {
+           return a % 2 == 0; 
+        }));
+        //verifica que los valores que cumplan la condiciòn pasen a un nuevo array, 
+        //el filter devuelve un array. Sera vacìo si no encuentra ninguno        
+        var pares = numeros.filter(function(a) {
+            return a % 2 == 0;
+        });
+
+        console.log(pares);
+
+        let varones = [];
+
+        for (let i = 0; i < personas.length; i++) {
+            if (personas[i].gender === "Male" ){
+                varones.push(personas[i]);
+            }            
+        }
+
+        console.log(varones);
+
+        let varonesFilter = personas.filter(function(persona) {
+            return persona.gender === 'Male';
+        });
+
+        console.log(varonesFilter);
+
+        //otra opcion de filter
+        let varonesFilter2 = personas.filter(p => p.gender === 'Male');
+        console.log(varonesFilter2);
+        //chaning se filtra las mujeres y los guarda en un array y de ahi se obtiene a los nombres
+        let nombreMujeres = personas.filter(p => p.gender === 'Female')
+                                    .map(a => a.first_name);
+        console.log(nombreMujeres);
+
+    </script>
+</body>
+</html>
