@@ -1,0 +1,17 @@
+.rojo{
+    background-color: #ff7f50;
+    
+}
+h1{
+    margin: 15px;
+}
+
+p{
+    margin: 15px;
+    padding: 5px;
+}
+
+button{
+    margin: 7px;
+    padding: 5px;
+}

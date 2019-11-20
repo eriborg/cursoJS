@@ -1,0 +1,15 @@
+table, th, td{
+    border: 1px solid black;
+    padding: 5px;
+    border-collapse: collapse;
+    margin-left: 15px;
+}
+
+h1{
+    margin: 15px;
+}
+
+button{
+    margin: 7px;
+    padding: 5px;
+}
